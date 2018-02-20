@@ -8,8 +8,11 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
   body
     header
-      .container-fluid
-        br
+      .container-fluid.custom-header
+        .col-sm-2
+          = image_tag('mother_teresa_logo.png', size: '140x140')
+        .col-sm-10
+          = image_tag('logo.png')
       .nav.navbar.navigation
         .container-fluid
           .navbar-header
@@ -29,15 +32,18 @@ html
                     = link_to t('.introduction'), page_path('about/intro'), id: 'a-custom'
                   li.divider                  
                   li.list
-                    = link_to t('.history'), page_path('about/history'), id: 'a-custom'
+                    = link_to t('.kariya_munda_message'), page_path('about/kmmsg'), id: 'a-custom'
                   li.divider
                   li.list
                     = link_to t('.principal_message'), page_path('about/principal_message'), id: 'a-custom'
+                  li.divider
+                  li.list
+                    = link_to t('.our_achievement'), page_path('about/achievement'), id: 'a-custom'
               li.list.dropdown
                 = link_to t('.admissions'), '#', id: 'a-custom'
                 ul.dropdown-menu                
                   li.list
-                    = link_to t('.course_offered'), courses_path, id: 'a-custom'
+                    = link_to t('.course_offered'), page_path('admissions/course_offered'), id: 'a-custom'
               li.list.dropdown
                 = link_to t('.examination'), '#', id: 'a-custom'
                 ul.dropdown-menu
